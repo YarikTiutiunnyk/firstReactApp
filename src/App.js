@@ -1,6 +1,10 @@
 import React from 'react';
 import './App.css';
+
+import {connect} from 'react-redux'
 import { Container, Card, Icon, Image } from 'semantic-ui-react'
+
+import { setFilms } from './actions/film';
 
 
 
@@ -29,13 +33,21 @@ function getCard(props) {
 
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+
 
   render() {
+    //console.log(this.props);
+    
 
+    const films = this.props.filmColection.films;
+    const {setFilms} = this.props;
+    const newFilm = [
+      {
+        id: 0,
+        title: "" + new Date()
+      }
+    ]
+    
     
     return (
       <div className="App">
@@ -43,9 +55,11 @@ class App extends React.Component {
           Srart!
         </h1>
         <div id='myConteiner'> 
-        <iframe id="player" type="text/html" width="640" height="360"
-          src="https://www.youtube.com/embed/RlfooqeZcdY"
-          frameBorder="0"></iframe>
+        <h2>
+          {films[0].title}
+        </h2>
+        <button onClick={setFilms.bind(this, newFilm)}>start </button>
+        
         </div>
 
         
@@ -56,9 +70,24 @@ class App extends React.Component {
   }
 }
 
-export default App;
+//Функція зв'язує redux state з props 
+const mapStateToProps = state=>{
+  return {...state}
+}
+
+//Функція зв'язує actions з props 
+const mapDispatchToProps = dispatch=>({
+  setFilms : films => dispatch(setFilms(films))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+//export default connect()(App);
 
 /*
+<iframe id="player" type="text/html" width="640" height="360"
+          src="https://www.youtube.com/embed/RlfooqeZcdY"
+          frameBorder="0"></iframe>
+
 style={{ maxWidth: "900px"}}
 
 <Container>
