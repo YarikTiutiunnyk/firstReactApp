@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 
 import  createAppStore from './store';
 import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from "react-router-dom";
 
 const myAppStore = createAppStore();
 
@@ -20,7 +21,9 @@ const myAppStore = createAppStore();
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={myAppStore}>
-      <App />
+      <Router>
+        <App />
+      </Router>
     </Provider>    
   </React.StrictMode>,
   document.getElementById('root')

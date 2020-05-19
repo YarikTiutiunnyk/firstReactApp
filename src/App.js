@@ -2,73 +2,134 @@ import React from 'react';
 import './App.css';
 
 import {connect} from 'react-redux'
-import { Container, Card, Icon, Image } from 'semantic-ui-react'
+import { Container} from 'semantic-ui-react'
+import { Switch, Route, useRouteMatch, useParams } from "react-router-dom";
 
 import { setFilms } from './actions/film';
 
+import CardList from './components/cardList';
+//import  FilmCard  from './components/card';
 
 
-function getCard(props) {
-  return (<Card >
-    <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-    <Card.Content>
-      <Card.Header>Matthew</Card.Header>
-      <Card.Meta>
-      <span className='date'>Joined in 2015</span>
-      </Card.Meta>
-      <Card.Description>
-        Matthew is a musician living in Nashville.
-      </Card.Description>
-    </Card.Content>
-    <Card.Content extra>
-      <a>
-      <Icon name='paper plane' color= 'orange'/>
-      22 Friends
-      </a>
-    </Card.Content>
-  </Card>)
-}
+
+
 
 
 
 
 class App extends React.Component {
 
+  componentDidMount() {
+    const url = 'http://www.omdbapi.com/?apikey=27156496&s=Harry+Potter&page=1&type=movie'
+
+    fetch(url)
+    .then(result => result.json())
+    .then(result => {
+      
+      //let obj = JSON.parse('{ "name":"John", "age":30, "city":"New York"}');
+      //console.log(obj);
+
+      this.props.setFilms(result.Search);
+      
+    })
+
+  }
 
   render() {
     //console.log(this.props);
     
-
-    const films = this.props.filmColection.films;
     const {setFilms} = this.props;
-    const newFilm = [
+    /*const newFilm = [
       {
         id: 0,
         title: "" + new Date()
       }
-    ]
-    
-    
-    return (
-      <div className="App">
-        <h1>
-          Srart!
-        </h1>
-        <div id='myConteiner'> 
-        <h2>
-          {films[0].title}
-        </h2>
-        <button onClick={setFilms.bind(this, newFilm)}>start </button>
-        
-        </div>
+    ]*/
+    const newFilm = [{
+      Title: 'Harry Potter and the Sorcerer\'s Stone',
+      Year: '2001',
+      imdbID: 'tt0241527',
+      Type: 'movie',
+      Poster: 'https://m.media-amazon.com/images/M/MV5BNjQ3NWNlNmQtMTE5ZS00MDdmLTlkZjUtZTBlM2UxMGFiMTU3XkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg'
+    }]
 
-        
-        
-        
-      </div>
+    
+    
+    return (  
+      <Container>
+
+        <Switch>
+          <Route exact path="/">
+            <CardList/>
+            <button onClick={setFilms.bind(this, newFilm)}>add new film </button>
+          </Route>
+          <Route path="/:id">
+            <About />
+          </Route> 
+        </Switch> 
+           
+      </Container>
     );
   }
 }
+
+
+
+function About() {
+  let match = useRouteMatch();
+
+  console.log(match);
+  
+
+  return (
+    <div>
+      <h2>{match.params.id}</h2>
+
+    </div>
+  );
+}
+
+/*
+function Topics() {
+  let match = useRouteMatch();
+
+  return (
+    <div>
+      <h2>Topics</h2>
+
+      <ul>
+        <li>
+          <Link to={`${match.url}/components`}>Components</Link>
+        </li>
+        <li>
+          <Link to={`${match.url}/props-v-state`}>
+            Props v. State
+          </Link>
+        </li>
+      </ul>
+      
+
+      
+      <Switch>
+        <Route path={`${match.path}/:topicId`}>
+          <Topic />
+        </Route>
+        <Route path={match.path}>
+          <h3>Please select a topic.</h3>
+        </Route>
+      </Switch>
+    </div>
+  );
+}*
+
+function Topic() {
+  let { topicId } = useParams();
+  return <h3>Requested topic ID: {topicId}</h3>;
+}*/
+
+
+
+
 
 //Функція зв'язує redux state з props 
 const mapStateToProps = state=>{
@@ -78,10 +139,13 @@ const mapStateToProps = state=>{
 //Функція зв'язує actions з props 
 const mapDispatchToProps = dispatch=>({
   setFilms : films => dispatch(setFilms(films))
+  //setFilms : films => dispatch(addFilm(films))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 //export default connect()(App);
+
+
 
 /*
 <iframe id="player" type="text/html" width="640" height="360"
@@ -90,71 +154,12 @@ export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 style={{ maxWidth: "900px"}}
 
-<Container>
-      <Card.Group itemsPerRow={4} stackable >
-      <Card >
-        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-        <Card.Content>
-          <Card.Header>Matthew</Card.Header>
-          <Card.Meta>
-          <span className='date'>Joined in 2015</span>
-          </Card.Meta>
-          <Card.Description>
-            Matthew is a musician living in Nashville.
-          </Card.Description>
-        </Card.Content>
-        <Card.Content extra>
-          <a>
-          <Icon name='paper plane' color= 'orange'/>
-          22 Friends
-          </a>
-        </Card.Content>
-      </Card>
-
-      <Card >
-        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-        <Card.Content>
-          <Card.Header>Matthew</Card.Header>
-          <Card.Meta>
-          <span className='date'>Joined in 2015</span>
-          </Card.Meta>
-          <Card.Description>
-            Matthew is a musician living in Nashville.
-          </Card.Description>
-        </Card.Content>
-        <Card.Content extra>
-          <a>
-          <Icon name='paper plane' color= 'orange'/>
-          22 Friends
-          </a>
-        </Card.Content>
-      </Card>
-
-      <Card >
-        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-        <Card.Content>
-          <Card.Header>Matthew</Card.Header>
-          <Card.Meta>
-          <span className='date'>Joined in 2015</span>
-          </Card.Meta>
-          <Card.Description>
-            Matthew is a musician living in Nashville.
-          </Card.Description>
-        </Card.Content>
-        <Card.Content extra>
-          <a>
-          <Icon name='paper plane' color= 'orange'/>
-          22 Friends
-          </a>
-        </Card.Content>
-      </Card>
+    <h2>
+      {films[0].title}
+    </h2>
+    <button onClick={setFilms.bind(this, newFilm)}>start </button>
 
 
-
-
-
-      </Card.Group>
-      </Container>
 */
 
 /*
@@ -190,4 +195,9 @@ class Clock extends React.Component {
     );
   }
 }
+
+          The Topics page has its own <Switch> with more routes
+          that build on the /topics URL path. You can think of the
+          2nd <Route> here as an "index" page for all topics, or
+          the page that is shown when no topic is selected 
 */
