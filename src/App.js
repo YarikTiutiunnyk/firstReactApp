@@ -8,6 +8,8 @@ import { Switch, Route, useRouteMatch, useParams } from "react-router-dom";
 import { setFilms } from './actions/film';
 
 import CardList from './components/cardList';
+import Menu from './components/menu';
+import SerchBlock from './components/serch2';
 //import  FilmCard  from './components/card';
 
 
@@ -26,8 +28,6 @@ class App extends React.Component {
     .then(result => result.json())
     .then(result => {
       
-      //let obj = JSON.parse('{ "name":"John", "age":30, "city":"New York"}');
-      //console.log(obj);
 
       this.props.setFilms(result.Search);
       
@@ -57,7 +57,8 @@ class App extends React.Component {
     
     return (  
       <Container>
-
+        <Menu />
+        <SerchBlock />
         <Switch>
           <Route exact path="/">
             <CardList/>
