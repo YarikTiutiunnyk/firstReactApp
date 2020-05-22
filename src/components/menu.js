@@ -56,7 +56,13 @@ class MenuExampleBasic extends Component {
   }
 }
 
+//Функція зв'язує redux state з props 
+const mapStateToProps = state => {
+  const { activePage } = state.menu;
+  return { activePage};
+};
+
 export default connect(
-  null,
+  mapStateToProps,
   { setActivePage }
 )(MenuExampleBasic);

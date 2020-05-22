@@ -50,37 +50,3 @@ const mapDispatchToProps = dispatch=>({
 //export default connect(mapStateToProps, mapDispatchToProps)(App);
 export default App;
 
-
-
-
-
-
-
-
-
-/*
-style={{ maxWidth: "900px"}}
-
-
-return (  
-      <Container>
-        <Menu />
-        
-        <Switch>  
-          <Route path="/films">
-            <SerchBlock itemFound= {this.props.filmObj.found} textError= {this.props.filmObj.textError} setFilms={this.props.setFilms} setFilmsError={this.props.setFilmsError}/>
-            <SerchFilmPage  filmObj={this.props.filmObj}/>
-          </Route>
-          <Route path="/series">
-            <SerchBlock />
-            <SerchSeries />
-          </Route>
-          <Route path="/">
-            <CardList films={this.props.masCollection} currentURL=''/>
-          </Route>
-
-        </Switch> 
-           
-      </Container>
-    );
-*/

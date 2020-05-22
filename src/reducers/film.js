@@ -33,18 +33,6 @@ const initiaState = {
 
 export default (state = initiaState, action)=>{
     switch (action.type) {
-        /*case 'ADD_COLLECTION':   
-            return {
-                ...state,
-                collection: {
-                    ...state.collection,
-                    masCollection: [
-                        ...state.collection.masCollection,
-                        ...action.payload
-                    ],
-                    countFilm: state.countFilm + action.payload.length
-                },   
-            };*/
         case 'SET_COLLECTION':   
             return {
                 ...state,
@@ -62,9 +50,9 @@ export default (state = initiaState, action)=>{
                     ...state.films,
                     mas: [
                         ...state.films.mas,
-                        ...action.payload
+                        ...action.payload.mas
                     ],
-                    count: state.count + action.payload.length,
+                    count: action.payload.mas.length + state.films.count,
                     textError: ''
                 },   
             };
@@ -90,7 +78,41 @@ export default (state = initiaState, action)=>{
                     textError: action.payload
                 }   
             }
-        
+            case 'ADD_SERIES':   
+            return {
+                ...state,
+                series: {
+                    ...state.series,
+                    mas: [
+                        ...state.series.mas,
+                        ...action.payload.mas
+                    ],
+                    count: action.payload.mas.length + state.series.count,
+                    textError: ''
+                },   
+            };
+        case 'SET_SERIES':   
+            return {
+                ...state,
+                series: {
+                    ...state.series,
+                    found: action.payload.found,
+                    mas: [
+                        ...action.payload.mas
+                    ],
+                    count: action.payload.mas.length,
+                    textError: ''
+                }   
+            }       
+        case 'SET_SERIES_ERROR':   
+            return {
+                ...state,
+                series: {
+                    ...state.series,
+                    found: 0,
+                    textError: action.payload
+                }   
+            }
         default:
             return state;
     }
