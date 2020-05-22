@@ -1,8 +1,9 @@
 import React from 'react';
 
 import {connect} from 'react-redux'
-import { Container} from 'semantic-ui-react'
+import { Container, Image} from 'semantic-ui-react'
 import { Switch, Route, useRouteMatch} from "react-router-dom";
+import logoSite from '../img/logoImg.png'
 
 import { setFilms, setFilmsError, setCollections, addFilms } from '../actions/film';
 
@@ -16,6 +17,7 @@ function mainPage (props) {
 
   return (
     <Container>
+        <Image centered src= {logoSite}   />
         <Menu />     
         <Switch>  
           <Route exact path="/films">
@@ -38,24 +40,24 @@ function mainPage (props) {
 
 //Функція зв'язує redux state з props 
 const mapStateToProps = state => {
-    const { activePage } = state.menu;
-    //Фільми з колекції які завантажуються статично
-    const masCollection = state.filmColection.collection.mas;
-    //Фільми які завантажуються динамічно
-    const filmObj = state.filmColection.films;
-    return { activePage, masCollection, filmObj};
-  };
+  const { activePage } = state.menu;
+  //Фільми з колекції які завантажуються статично
+  const masCollection = state.filmColection.collection.mas;
+  //Фільми які завантажуються динамічно
+  const filmObj = state.filmColection.films;
+  return { activePage, masCollection, filmObj};
+};
   
   
-  //Функція зв'язує actions з props 
-  const mapDispatchToProps = dispatch=>({
-    setCollections : films => dispatch(setCollections(films)),
-    setFilms : objectWithFilms => dispatch(setFilms(objectWithFilms)),
-    setFilmsError : strError => dispatch(setFilmsError(strError)),
-  
-  })
-  
-  export default connect(mapStateToProps, mapDispatchToProps)(mainPage);
+//Функція зв'язує actions з props 
+const mapDispatchToProps = dispatch=>({
+  setCollections : films => dispatch(setCollections(films)),
+  setFilms : objectWithFilms => dispatch(setFilms(objectWithFilms)),
+  setFilmsError : strError => dispatch(setFilmsError(strError)),
+
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(mainPage);
 
 
 

@@ -13,14 +13,18 @@ class InputExampleActionIconButton extends React.Component {
     constructor(props) {
       super(props);
       this.state = { input: "" };
+
+      this.handleClickButton = this.handleClickButton.bind(this);
+      this.updateInput = this.updateInput.bind(this);
+      
     }
   
     updateInput = input => {
       this.setState({ input });
     };
   
-    handleClickButton = () => {
-      //зберігаємо стрічку пошуку
+    handleClickButton () {
+      //зберігаємо стрічку пошуку в Store
       this.props.setSerchString(this.state.input);
       //робимо запит на OMD та зберігаємо данні в Store
       serchOMDBFilms(this.state.input, this.props.setFilms, this.props.setFilmsError );
@@ -55,12 +59,13 @@ export default connect(
     { setSerchString }
   )(InputExampleActionIconButton);
 
+//шукаємо фільми на OMDB та зберігао  
 function serchOMDBFilms (inputStr, funcSetFilmsToStote, funcSetFilmsErrorToStote, page = 1){
 
-  if (inputStr != '') {
-    inputStr = inputStr.replace(' ', '+');
+  if (inputStr !== '') {
+    inputStr = inputStr.replace( / /g, "+" );
     const url = `http://www.omdbapi.com/?apikey=27156496&s=${inputStr}&page=${page}&type=movie`;
-    console.log(`request: ${url}`);
+    //console.log(`request: ${url}`);
     
     let objToStore = {
       found: 0,
@@ -69,12 +74,12 @@ function serchOMDBFilms (inputStr, funcSetFilmsToStote, funcSetFilmsErrorToStote
 
     fetch(url)
     .then(result => {
-      console.log(result);
+      //console.log(result);
       return result.json();
     })
     .then(json => {
-      console.log(json);
-      if (json.Response == "True") {
+      //console.log(json);
+      if (json.Response === "True") {
         objToStore.mas = json.Search;
         objToStore.found = json.totalResults;
         funcSetFilmsToStote(objToStore);
