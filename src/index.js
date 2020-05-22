@@ -10,22 +10,21 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 const myAppStore = createAppStore();
 
-/*myAppStore.dispatch({
-  type: "ADD_FILM",
-  payload: {
-    id: 0,
-    taitle: "Next Book 0"
-  }
-});*/
+/*
+  <React.StrictMode>
+  </React.StrictMode>,
+
+
+*/
 
 ReactDOM.render(
-  <React.StrictMode>
+
     <Provider store={myAppStore}>
       <Router>
         <App />
       </Router>
-    </Provider>    
-  </React.StrictMode>,
+    </Provider>,    
+
   document.getElementById('root')
 );
 

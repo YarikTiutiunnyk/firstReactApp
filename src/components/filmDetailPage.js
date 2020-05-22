@@ -56,7 +56,7 @@ class FilmDetailPage extends React.Component{
             return result.json();
         })
         .then(json => {
-            //console.log(json);
+            console.log(json);
             if (json.Response === "True") {
                 this.setState({
                     Title: json.Title,
@@ -74,10 +74,10 @@ class FilmDetailPage extends React.Component{
                 })
 
                 //serch video on YouTube
-                const urlSerchVideo = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${json.Title.replace( / /g, "+" )}+trailer&type=video&key=AIzaSyDbvAZjWhs15-sw8XRVAzguPtIYYwqg7XE`;
+                const urlSerchVideo = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${json.Title.replace( / /g, "+" )}+trailer${json.Year ==='N/A'?'': '+'+ json.Year}+${json.Type}&type=video&key=AIzaSyDbvAZjWhs15-sw8XRVAzguPtIYYwqg7XE`;
                 fetch(urlSerchVideo)
                 .then(result => {
-                    //console.log(result);
+                    console.log(result);
                     return result.json();
                 })
                 .then(json => {

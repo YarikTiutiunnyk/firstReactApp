@@ -13,7 +13,7 @@ const CardList = ({ films, currentURL }) => (
                 <FilmCard key={`key-${film.imdbID}`} Title={film.Title}  Year={film.Year} imdbID={film.imdbID} Type={film.Type} Poster={film.Poster} currentURL={currentURL}/>
             );
           })
-        : "Array of filma is ampty"}
+        : ""}
 
     </Card.Group>
   );
