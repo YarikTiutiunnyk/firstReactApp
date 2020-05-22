@@ -1,35 +1,53 @@
 import React, { Component } from 'react'
+import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 import { Menu } from 'semantic-ui-react'
 
-export default class MenuExampleBasic extends Component {
-  state = {}
+import { setActivePage } from '../actions/menu';
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+class MenuExampleBasic extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {activeItem: 'collections'};
 
+    this.handleItemClick = this.handleItemClick.bind(this);
+  }
+
+  //state = {activeItem: 'collections'}
+
+
+  handleItemClick = (e, { name }) => {
+    this.setState({ activeItem: name })
+    this.props.setActivePage(name);
+  }
   render() {
     const { activeItem } = this.state
 
     return (
       <Menu widths={3} stackable={true}>
         <Menu.Item
-          name='editorials'
-          active={activeItem === 'editorials'}
+          as={Link} to='/'
+          name='collections'
+          active={activeItem === 'collections'}
           onClick={this.handleItemClick}
         >
           My collectoons
         </Menu.Item>
 
         <Menu.Item
-          name='reviews'
-          active={activeItem === 'reviews'}
+          as={Link} to='/films'
+          name='films'
+          active={activeItem === 'films'}
           onClick={this.handleItemClick}
         >
           Serch films
         </Menu.Item>    
 
         <Menu.Item
-          name='upcomingEvents'
-          active={activeItem === 'upcomingEvents'}
+          as={Link} to='/series'
+          name='series'
+          active={activeItem === 'series'}
           onClick={this.handleItemClick}
         >
           Serch series
@@ -38,3 +56,8 @@ export default class MenuExampleBasic extends Component {
     )
   }
 }
+
+export default connect(
+  null,
+  { setActivePage }
+)(MenuExampleBasic);
