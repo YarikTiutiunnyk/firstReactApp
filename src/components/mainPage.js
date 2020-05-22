@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {connect} from 'react-redux'
-import { Container, Image, Button, Grid, Segment} from 'semantic-ui-react'
+import { Container, Image, Button, Segment} from 'semantic-ui-react'
 import { Switch, Route, useRouteMatch} from "react-router-dom";
 import logoSite from '../img/logoImg.png'
 

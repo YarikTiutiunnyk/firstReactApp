@@ -8,7 +8,7 @@ import { setActivePage } from '../actions/menu';
 class MenuExampleBasic extends Component {
   constructor(props) {
     super(props);
-    this.state = {activeItem: 'collections'};
+    //this.state = {activeItem: 'collections'};
 
     this.handleItemClick = this.handleItemClick.bind(this);
   }
@@ -17,11 +17,11 @@ class MenuExampleBasic extends Component {
 
 
   handleItemClick = (e, { name }) => {
-    this.setState({ activeItem: name })
+    //this.setState({ activeItem: name })
     this.props.setActivePage(name);
   }
   render() {
-    const { activeItem } = this.state
+    const activeItem = this.props.activePage
 
     return (
       <Menu widths={3} stackable={true}>
