@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.d57c5222.chunk.css",
-    "main.js": "/static/js/main.be6cdaa2.chunk.js",
-    "main.js.map": "/static/js/main.be6cdaa2.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.52922440.js",
-    "runtime-main.js.map": "/static/js/runtime-main.52922440.js.map",
-    "static/js/2.8d2bf017.chunk.js": "/static/js/2.8d2bf017.chunk.js",
-    "static/js/2.8d2bf017.chunk.js.map": "/static/js/2.8d2bf017.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.dc4545ead36555ab87cd8177cb9c27b2.js": "/precache-manifest.dc4545ead36555ab87cd8177cb9c27b2.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.d57c5222.chunk.css.map": "/static/css/main.d57c5222.chunk.css.map",
-    "static/js/2.8d2bf017.chunk.js.LICENSE.txt": "/static/js/2.8d2bf017.chunk.js.LICENSE.txt",
-    "static/media/404logolong.png": "/static/media/404logolong.8a67a3bc.png",
-    "static/media/logoImg.png": "/static/media/logoImg.f12fd653.png"
+    "main.css": "/firstReactApp/static/css/main.d57c5222.chunk.css",
+    "main.js": "/firstReactApp/static/js/main.39b80b75.chunk.js",
+    "main.js.map": "/firstReactApp/static/js/main.39b80b75.chunk.js.map",
+    "runtime-main.js": "/firstReactApp/static/js/runtime-main.0efdb11b.js",
+    "runtime-main.js.map": "/firstReactApp/static/js/runtime-main.0efdb11b.js.map",
+    "static/js/2.8d2bf017.chunk.js": "/firstReactApp/static/js/2.8d2bf017.chunk.js",
+    "static/js/2.8d2bf017.chunk.js.map": "/firstReactApp/static/js/2.8d2bf017.chunk.js.map",
+    "index.html": "/firstReactApp/index.html",
+    "precache-manifest.712a4777ede7391137d16f7e16f5616a.js": "/firstReactApp/precache-manifest.712a4777ede7391137d16f7e16f5616a.js",
+    "service-worker.js": "/firstReactApp/service-worker.js",
+    "static/css/main.d57c5222.chunk.css.map": "/firstReactApp/static/css/main.d57c5222.chunk.css.map",
+    "static/js/2.8d2bf017.chunk.js.LICENSE.txt": "/firstReactApp/static/js/2.8d2bf017.chunk.js.LICENSE.txt",
+    "static/media/404logolong.png": "/firstReactApp/static/media/404logolong.8a67a3bc.png",
+    "static/media/logoImg.png": "/firstReactApp/static/media/logoImg.f12fd653.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.52922440.js",
+    "static/js/runtime-main.0efdb11b.js",
     "static/js/2.8d2bf017.chunk.js",
     "static/css/main.d57c5222.chunk.css",
-    "static/js/main.be6cdaa2.chunk.js"
+    "static/js/main.39b80b75.chunk.js"
   ]
 }
