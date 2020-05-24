@@ -15,10 +15,10 @@ class App extends React.Component {
 
     return (  
         <Switch>           
-          <Route path='/series/:filmId' component={FilmDetail}/> 
-          <Route path='/films/:filmId' component={FilmDetail}/>
-          <Route path='/collection/:filmId' component={FilmDetail}/>
-          <Route path="/">
+          <Route path='/firstReactApp/series/:filmId' component={FilmDetail}/> 
+          <Route path='/firstReactApp/films/:filmId' component={FilmDetail}/>
+          <Route path='/firstReactApp/collection/:filmId' component={FilmDetail}/>
+          <Route path="/firstReactApp/">
             <MainPage />
           </Route> 
         </Switch> 

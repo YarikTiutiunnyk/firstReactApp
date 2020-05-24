@@ -66,7 +66,7 @@ export function serchOMDBFilms (inputStr, funcSetFilmsToStote, funcSetFilmsError
 
   if (inputStr !== '') {
     inputStr = inputStr.replace( / /g, "+" );
-    const url = `http://www.omdbapi.com/?apikey=27156496&s=${inputStr}&page=${page}&type=${type}`;
+    const url = `https://www.omdbapi.com/?apikey=27156496&s=${inputStr}&page=${page}&type=${type}`;
     console.log(`request: ${url}`);
     
     let objToStore = {

@@ -22,16 +22,16 @@ function mainPage (props) {
         <Image centered src= {logoSite}   />
         <Menu />     
         <Switch>  
-          <Route exact path="/films">
+          <Route exact path="/firstReactApp/films">
             <SerchBlock itemFound= {props.filmObj.found} textError= {props.filmObj.textError} setItems={props.setFilms} setItemsError={props.setFilmsError} setSerchString={props.setSerchFilmsString} type='movie'/>
             <SerchFilmPage  filmObj={props.filmObj} setFilms={props.addFilms} setFilmsError={props.setFilmsError} serchStringFilms={props.serchStringFilms}/>
           </Route>
-          <Route exact path="/series">
+          <Route exact path="/firstReactApp/series">
             <SerchBlock itemFound= {props.seriesObj.found} textError= {props.seriesObj.textError} setItems={props.setSeries} setItemsError={props.setSeriesError} setSerchString={props.setSerchSeriesString} type='series'/>
             <SerchSeriesPage filmObj={props.seriesObj} setFilms={props.addSeries} setFilmsError={props.setSeriesError} serchStringFilms={props.serchStringSeries}/>
           </Route>
-          <Route exact path="/">
-            <CardList films={props.masCollection} currentURL='/collection'/>
+          <Route exact path="/firstReactApp/">
+            <CardList films={props.masCollection} currentURL='/firstReactApp/collection'/>
           </Route>
 
         </Switch> 

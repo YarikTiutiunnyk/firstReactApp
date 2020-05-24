@@ -26,7 +26,7 @@ class MenuExampleBasic extends Component {
     return (
       <Menu widths={3} stackable={true}>
         <Menu.Item
-          as={Link} to='/'
+          as={Link} to='/firstReactApp/'
           name='collections'
           active={activeItem === 'collections'}
           onClick={this.handleItemClick}
@@ -35,7 +35,7 @@ class MenuExampleBasic extends Component {
         </Menu.Item>
 
         <Menu.Item
-          as={Link} to='/films'
+          as={Link} to='/firstReactApp/films'
           name='films'
           active={activeItem === 'films'}
           onClick={this.handleItemClick}
@@ -44,7 +44,7 @@ class MenuExampleBasic extends Component {
         </Menu.Item>    
 
         <Menu.Item
-          as={Link} to='/series'
+          as={Link} to='/firstReactApp/series'
           name='series'
           active={activeItem === 'series'}
           onClick={this.handleItemClick}

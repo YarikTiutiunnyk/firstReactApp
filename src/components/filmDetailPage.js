@@ -30,7 +30,7 @@ class FilmDetailPage extends React.Component{
             Poster : "N/A",
             imdbRating: "Rating is unknown",
             Response: "N/A",
-            backPage: "/",
+            backPage: "/firstReactApp/",
             urlVideoImg: "",
             idYoutubeVideo: ""
         }
@@ -40,16 +40,16 @@ class FilmDetailPage extends React.Component{
         //зберігаємо сторінку з якої прийшли
         if (this.props.match.path.indexOf("films") !== -1) {
             this.setState({
-                backPage: "/films"}
+                backPage: "/firstReactApp/films"}
             )      
         } else if (this.props.match.path.indexOf("series") !== -1) {
             this.setState({
-                backPage: "/series"}
+                backPage: "/firstReactApp/series"}
             )
         }
 
         //витягуємо данні
-        const url = `http://www.omdbapi.com/?apikey=27156496&i=${this.props.match.params.filmId}&plot=full`;
+        const url = `https://www.omdbapi.com/?apikey=27156496&i=${this.props.match.params.filmId}&plot=full`;
         fetch(url)
         .then(result => {
             //console.log(result);
