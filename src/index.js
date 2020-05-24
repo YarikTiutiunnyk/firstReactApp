@@ -10,13 +10,6 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 const myAppStore = createAppStore();
 
-/*
-  <React.StrictMode>
-  </React.StrictMode>,
-
-
-*/
-
 ReactDOM.render(
 
     <Provider store={myAppStore}>
