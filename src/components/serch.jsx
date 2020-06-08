@@ -1,7 +1,7 @@
 import React from 'react'
 //import { connect } from "react-redux";
 import { Input, Button, Header } from 'semantic-ui-react'
-
+import PropTypes from 'prop-types';
 
 //import { setFilms, setFilmsError } from '../actions/film';
 
@@ -17,9 +17,13 @@ class InputExampleActionIconButton extends React.Component {
       
     }
   
-    updateInput = input => {
+    /*updateInput = input => {
       this.setState({ input });
-    };
+    };*/
+
+    updateInput ( input ) {
+      this.setState({ input });
+    }
   
     handleClickButton () {
       //зберігаємо стрічку пошуку в Store
@@ -28,7 +32,7 @@ class InputExampleActionIconButton extends React.Component {
       serchOMDBFilms(this.state.input, this.props.setItems, this.props.setItemsError, 1, this.props.type );
       //обнуляємо форму вводу
       this.setState({ input: "" });
-    };
+    }
   
     render() {
       return (
@@ -50,15 +54,16 @@ class InputExampleActionIconButton extends React.Component {
       );
     }
   }
+  InputExampleActionIconButton.propTypes = {
+    setSerchString: PropTypes.func.isRequired,
+    setItems: PropTypes.func.isRequired,
+    setItemsError: PropTypes.func.isRequired,
+    type: PropTypes.string,
+    itemFound: PropTypes.string.isRequired,
+    textError: PropTypes.string.isRequired
+  }
 
   export default InputExampleActionIconButton;
-/*export default connect(
-    null,
-    { setSerchString }
-  )(InputExampleActionIconButton);*/
-
-
-
 
 
 //шукаємо фільми на OMDB та зберігао  
@@ -67,10 +72,10 @@ export function serchOMDBFilms (inputStr, funcSetFilmsToStote, funcSetFilmsError
   if (inputStr !== '') {
     inputStr = inputStr.replace( / /g, "+" );
     const url = `https://www.omdbapi.com/?apikey=27156496&s=${inputStr}&page=${page}&type=${type}`;
-    console.log(`request: ${url}`);
+    //console.log(`request: ${url}`);
     
     let objToStore = {
-      found: 0,
+      found: '0',
       mas:[ ]
     }; 
 

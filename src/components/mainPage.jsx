@@ -3,6 +3,7 @@ import React from 'react';
 import {connect} from 'react-redux'
 import { Container, Image, Button, Segment} from 'semantic-ui-react'
 import { Switch, Route, useRouteMatch} from "react-router-dom";
+import PropTypes from 'prop-types';
 import logoSite from '../img/logoImg.png'
 
 import { setCollections, setFilms, addFilms, setFilmsError, setSeries, addSeries, setSeriesError } from '../actions/film';
@@ -38,6 +39,23 @@ function mainPage (props) {
            
       </Container>
   );
+}
+mainPage.propTypes = {
+  filmObj: PropTypes.object.isRequired,
+  setFilms: PropTypes.func.isRequired,
+  setFilmsError: PropTypes.func.isRequired,
+  setSerchFilmsString: PropTypes.func.isRequired,
+  addFilms: PropTypes.func.isRequired,
+  serchStringFilms: PropTypes.string.isRequired,
+
+  seriesObj: PropTypes.object.isRequired,
+  setSeries: PropTypes.func.isRequired,
+  setSeriesError: PropTypes.func.isRequired,
+  setSerchSeriesString: PropTypes.func.isRequired,
+  addSeries: PropTypes.func.isRequired,
+  serchStringSeries: PropTypes.string.isRequired,
+
+  masCollection: PropTypes.array.isRequired
 }
 
 //Функція зв'язує redux state з props 
@@ -83,7 +101,7 @@ let match = useRouteMatch();
 
 function handleClick(e) {
   e.preventDefault();
-  console.log('По ссылке кликнули.');
+  //console.log('По ссылке кликнули.');
   serchOMDBFilms(props.serchStringFilms, props.setFilms, props.setFilmsError, Math.ceil(props.filmObj.count/10)+1 )
 }
 
@@ -97,40 +115,44 @@ return (
     </div>
 );
 }
+SerchFilmPage.propTypes = {
+  filmObj: PropTypes.shape({
+    mas: PropTypes.array,
+    count: PropTypes.number,
+    found: PropTypes.string
+  }),
+  serchStringFilms: PropTypes.string.isRequired,
+  setFilms: PropTypes.func.isRequired,
+  setFilmsError: PropTypes.func.isRequired
+}
 
 
 function SerchSeriesPage (props) {
-  let match = useRouteMatch();
-  
-  function handleClick(e) {
-    e.preventDefault();
-    console.log('По ссылке кликнули.');
-    console.log(props);
+let match = useRouteMatch();
 
-    serchOMDBFilms(props.serchStringFilms, props.setFilms, props.setFilmsError, Math.ceil(props.filmObj.count/10)+1, 'series' )
-  }
-  
-  return (
-  
-      <div>
-          <CardList films={props.filmObj.mas} currentURL={`${match.url}`}/>
-          <Segment basic textAlign='center'>
-            <Button onClick={handleClick} disabled={props.filmObj.count >= props.filmObj.found }  primary size='huge' style={{ marginTop: '1.5em', minWidth: '10em', marginBottom: '50px'}}> More  </Button>
-          </Segment>
-      </div>
-  );
-  }
+function handleClick(e) {
+  e.preventDefault();
+  //console.log('По ссылке кликнули.');
+  serchOMDBFilms(props.serchStringFilms, props.setFilms, props.setFilmsError, Math.ceil(props.filmObj.count/10)+1, 'series' )
+}
 
+return (
 
-
-/*class SerchSeriesPage extends React.Component {
-    
-    render(){
-        return (
-          <div>
-            <h2>SerchSeries</h2>   
-          </div>
-        );
-    }
-}*/
-
+    <div>
+        <CardList films={props.filmObj.mas} currentURL={`${match.url}`}/>
+        <Segment basic textAlign='center'>
+          <Button onClick={handleClick} disabled={props.filmObj.count >= props.filmObj.found }  primary size='huge' style={{ marginTop: '1.5em', minWidth: '10em', marginBottom: '50px'}}> More  </Button>
+        </Segment>
+    </div>
+);
+}
+SerchSeriesPage.propTypes = {
+  filmObj: PropTypes.shape({
+    mas: PropTypes.array,
+    count: PropTypes.number,
+    found: PropTypes.string
+  }),
+  serchStringFilms: PropTypes.string.isRequired,
+  setFilms: PropTypes.func.isRequired,
+  setFilmsError: PropTypes.func.isRequired
+}

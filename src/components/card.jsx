@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Icon, Image } from 'semantic-ui-react';
-//https://jewelleryair.com/upload/iblock/1f7/1f7097a64eca7164ae908f5a538d677f.jpg
-//https://static.tildacdn.com/tild6262-6135-4666-a662-363637373436/404logo.png
-//https://react.semantic-ui.com/images/avatar/large/matthew.png
+import PropTypes from 'prop-types';
+
 import logo404 from '../img/404logolong.png'
 
 const FilmCard = ( props ) =>(
@@ -26,5 +25,13 @@ const FilmCard = ( props ) =>(
       </Card.Content>
     </Card>
 );
+FilmCard.propTypes = {
+  Poster: PropTypes.string.isRequired,
+  imdbID: PropTypes.string.isRequired,
+  Title: PropTypes.string.isRequired,
+  Year: PropTypes.string.isRequired,
+  Type: PropTypes.string.isRequired,
+  currentURL: PropTypes.string.isRequired,
+}
 
   export default FilmCard;

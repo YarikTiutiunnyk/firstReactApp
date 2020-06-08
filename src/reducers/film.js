@@ -1,12 +1,12 @@
 const initiaState = {
     films:{
-        found: 0,
+        found: '0',
         count: 0,
         mas:[ ],
         textError: ''
     },
     series:{
-        found: 0,
+        found: '0',
         count: 0,
         mas:[ ],
         textError: ''
@@ -106,7 +106,9 @@ export default (state = initiaState, action)=>{
                 ...state,
                 films: {
                     ...state.films,
-                    found: 0,
+                    found: '0',
+                    count: 0,
+                    mas:[ ], 
                     textError: action.payload
                 }   
             }
@@ -141,7 +143,9 @@ export default (state = initiaState, action)=>{
                 ...state,
                 series: {
                     ...state.series,
-                    found: 0,
+                    found: '0',
+                    count: 0,
+                    mas:[ ], 
                     textError: action.payload
                 }   
             }

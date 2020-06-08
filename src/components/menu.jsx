@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { Menu } from 'semantic-ui-react'
 
 import { setActivePage } from '../actions/menu';
@@ -8,18 +9,17 @@ import { setActivePage } from '../actions/menu';
 class MenuExampleBasic extends Component {
   constructor(props) {
     super(props);
-    //this.state = {activeItem: 'collections'};
 
     this.handleItemClick = this.handleItemClick.bind(this);
   }
 
-  //state = {activeItem: 'collections'}
-
-
-  handleItemClick = (e, { name }) => {
-    //this.setState({ activeItem: name })
+  handleItemClick (e, { name }){
     this.props.setActivePage(name);
   }
+
+  /*handleItemClick = (e, { name }) => {
+    this.props.setActivePage(name);
+  }*/
   render() {
     const activeItem = this.props.activePage
 
@@ -54,6 +54,10 @@ class MenuExampleBasic extends Component {
       </Menu>
     )
   }
+}
+MenuExampleBasic.propTypes = {
+  setActivePage: PropTypes.func.isRequired,
+  activePage: PropTypes.string.isRequired
 }
 
 //Функція зв'язує redux state з props 

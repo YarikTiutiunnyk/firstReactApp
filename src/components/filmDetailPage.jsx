@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useRouteMatch } from "react-router-dom";
+import PropTypes from 'prop-types';
 import { Segment, Container, Header, Image, Grid, Button, Icon, List, Embed } from 'semantic-ui-react'
 
 import logo404 from '../img/404logolong.png'
@@ -56,7 +57,7 @@ class FilmDetailPage extends React.Component{
             return result.json();
         })
         .then(json => {
-            console.log(json);
+            //console.log(json);
             if (json.Response === "True") {
                 this.setState({
                     Title: json.Title,
@@ -77,7 +78,7 @@ class FilmDetailPage extends React.Component{
                 const urlSerchVideo = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${json.Title.replace( / /g, "+" )}+trailer${json.Year ==='N/A'?'': '+'+ json.Year}+${json.Type}&type=video&key=AIzaSyDbvAZjWhs15-sw8XRVAzguPtIYYwqg7XE`;
                 fetch(urlSerchVideo)
                 .then(result => {
-                    console.log(result);
+                    //console.log(result);
                     return result.json();
                 })
                 .then(json => {
@@ -185,6 +186,9 @@ class FilmDetailPage extends React.Component{
         );
     }
 }
+FilmDetailPage.propTypes = {
+    match: PropTypes.object.isRequired,
+  }
 
   /* 
   <iframe id="player" type="text/html" width="640" height="360"
