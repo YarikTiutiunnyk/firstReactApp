@@ -1,11 +1,4 @@
 
-/*  films:{
-        found: 0,
-        count: 0,
-        mas:[ ],
-        textError:''
-
-    }*/
 export const setCollections = (masfilms)=>({
     type: "SET_COLLECTION",
     payload: masfilms
@@ -16,9 +9,9 @@ export const setFilms = (objectWithFilms)=>({
     payload: objectWithFilms
 })
 
-export const addFilms = (masfilms)=>({
+export const addFilms = (objectWithFilms)=>({
     type: "ADD_FILMS",
-    payload: masfilms
+    payload: objectWithFilms
 })
 
 export const setFilmsError = (strError)=>({
@@ -31,9 +24,9 @@ export const setSeries = (objectWithFilms)=>({
     payload: objectWithFilms
 })
 
-export const addSeries = (masfilms)=>({
+export const addSeries = (objectWithFilms)=>({
     type: "ADD_SERIES",
-    payload: masfilms
+    payload: objectWithFilms
 })
 
 export const setSeriesError = (strError)=>({

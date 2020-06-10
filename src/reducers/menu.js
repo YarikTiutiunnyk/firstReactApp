@@ -1,8 +1,8 @@
-const initiaState = {
+const initialState = {
     activePage: 'collections'
 }
 
-export default (state = initiaState, action)=>{
+export default (state = initialState, action)=>{
     switch (action.type) {
         case 'SET_ACTIVE_PAGE':   
             return {

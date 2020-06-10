@@ -1,4 +1,4 @@
-const initiaState = {
+const initialState = {
     films:{
         found: '0',
         count: 0,
@@ -63,7 +63,7 @@ const initiaState = {
     }
 }
 
-export default (state = initiaState, action)=>{
+export default (state = initialState, action)=>{
     switch (action.type) {
         case 'SET_COLLECTION':   
             return {

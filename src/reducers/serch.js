@@ -1,9 +1,9 @@
-const initiaState = {
+const initialState = {
     serchStringFilms: '',
     serchStringSeries: ''
 }
 
-export default (state = initiaState, action)=>{
+export default (state = initialState, action)=>{
     switch (action.type) {
         case 'SET_SERCH_FILMS_STRING':   
             return {
