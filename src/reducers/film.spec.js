@@ -1,162 +1,160 @@
-import reducer  from './film'
+import reducer from './film';
 
 const initialState = {
-  films:{
-      found: '0',
-      count: 0,
-      mas:[ ],
-      textError: ''
+  films: {
+    found: '0',
+    count: 0,
+    mas: [],
+    textError: ''
   },
-  series:{
-      found: '0',
-      count: 0,
-      mas:[ ],
-      textError: ''
+  series: {
+    found: '0',
+    count: 0,
+    mas: [],
+    textError: ''
   },
-  collection:{
-      mas:[]
+  collection: {
+    mas: []
   }
-}
+};
 
 // За допомогою unit-тестів тестуємо редюсери
-describe('film reducer test', () => { 
-  
-  it('SET_COLLECTION', () => { 
+describe('film reducer test', () => {
+  it('SET_COLLECTION', () => {
     const action = {
-      type: "SET_COLLECTION",
+      type: 'SET_COLLECTION',
       payload: [1, 2, 3]
-    }
+    };
     expect(reducer(initialState, action)).toEqual({
       ...initialState,
-      collection:{
+      collection: {
         mas: [1, 2, 3]
       }
-    })
-  })
+    });
+  });
   //-----------------------------------------------------
   it('ADD_FILMS', () => {
     const initialStatePreviously = {
       ...initialState,
-      films:{
+      films: {
         found: '0',
         count: 3,
-        mas:[1, 2, 3],
+        mas: [1, 2, 3],
         textError: ''
       }
-    }    
+    };
     const action = {
-      type: "ADD_FILMS",
+      type: 'ADD_FILMS',
       payload: {
         mas: [4, 5, 6]
       }
-    }
+    };
     expect(reducer(initialStatePreviously, action)).toEqual({
       ...initialState,
-      films:{
+      films: {
         found: '0',
         count: 6,
-        mas:[1, 2, 3, 4, 5, 6],
-        textError: ''       
-    }
-    })
-  })
+        mas: [1, 2, 3, 4, 5, 6],
+        textError: ''
+      }
+    });
+  });
   //-----------------------------------------------------
-  it('SET_FILMS', () => {    
+  it('SET_FILMS', () => {
     const action = {
-      type: "SET_FILMS",
+      type: 'SET_FILMS',
       payload: {
         mas: [1, 2, 3],
         found: '3'
       }
-    }
+    };
     expect(reducer(initialState, action)).toEqual({
       ...initialState,
-      films:{
+      films: {
         found: '3',
         count: 3,
-        mas:[1, 2, 3],
-        textError: ''       
-    }
-    })
-  })
+        mas: [1, 2, 3],
+        textError: ''
+      }
+    });
+  });
   //-----------------------------------------------------
-  it('SET_FILMS_ERROR', () => {    
+  it('SET_FILMS_ERROR', () => {
     const action = {
-      type: "SET_FILMS_ERROR",
-      payload: "Error text"
-    }
+      type: 'SET_FILMS_ERROR',
+      payload: 'Error text'
+    };
     expect(reducer(initialState, action)).toEqual({
       ...initialState,
-      films:{
+      films: {
         found: '0',
         count: 0,
-        mas:[ ], 
-        textError: "Error text"       
-    }
-    })
-  })
+        mas: [],
+        textError: 'Error text'
+      }
+    });
+  });
   //-----------------------------------------------------
   it('ADD_SERIES', () => {
     const initialStatePreviously = {
       ...initialState,
-      series:{
+      series: {
         found: '0',
         count: 3,
-        mas:[1, 2, 3],
+        mas: [1, 2, 3],
         textError: ''
       }
-    }    
+    };
     const action = {
-      type: "ADD_SERIES",
+      type: 'ADD_SERIES',
       payload: {
         mas: [4, 5, 6]
       }
-    }
+    };
     expect(reducer(initialStatePreviously, action)).toEqual({
       ...initialState,
-      series:{
+      series: {
         found: '0',
         count: 6,
-        mas:[1, 2, 3, 4, 5, 6],
-        textError: ''       
-    }
-    })
-  })
+        mas: [1, 2, 3, 4, 5, 6],
+        textError: ''
+      }
+    });
+  });
   //-----------------------------------------------------
-  it('SET_SERIES', () => {    
+  it('SET_SERIES', () => {
     const action = {
-      type: "SET_SERIES",
+      type: 'SET_SERIES',
       payload: {
         mas: [1, 2, 3],
         found: '3'
       }
-    }
+    };
     expect(reducer(initialState, action)).toEqual({
       ...initialState,
-      series:{
+      series: {
         found: '3',
         count: 3,
-        mas:[1, 2, 3],
-        textError: ''       
-    }
-    })
-  })
+        mas: [1, 2, 3],
+        textError: ''
+      }
+    });
+  });
   //-----------------------------------------------------
-  it('SET_SERIES_ERROR', () => {    
+  it('SET_SERIES_ERROR', () => {
     const action = {
-      type: "SET_SERIES_ERROR",
-      payload: "Error text"
-    }
+      type: 'SET_SERIES_ERROR',
+      payload: 'Error text'
+    };
     expect(reducer(initialState, action)).toEqual({
       ...initialState,
-      series:{
+      series: {
         found: '0',
         count: 0,
-        mas:[ ], 
-        textError: "Error text"       
-    }
-    })
-  })
+        mas: [],
+        textError: 'Error text'
+      }
+    });
+  });
   //-----------------------------------------------------
-
-})
+});

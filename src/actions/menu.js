@@ -1,4 +1,4 @@
-export const setActivePage = (string)=>({
-    type: "SET_ACTIVE_PAGE",
-    payload: string
-})
+export const setActivePage = (string) => ({
+  type: 'SET_ACTIVE_PAGE',
+  payload: string
+});

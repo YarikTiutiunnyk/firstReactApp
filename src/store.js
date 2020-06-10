@@ -1,10 +1,9 @@
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware } from 'redux';
 import { logger } from 'redux-logger';
-import rootReducer from './reducers'
+import rootReducer from './reducers';
 
 //Створюємо Store і додаємо до нього посередників
-export default () =>{
-    const store = createStore(rootReducer, applyMiddleware(logger))
-    return store;
-
-}
+export default () => {
+  const store = createStore(rootReducer, applyMiddleware(logger));
+  return store;
+};

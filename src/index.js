@@ -1,22 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import  createAppStore from './store';
+import createAppStore from './store';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const myAppStore = createAppStore();
 
 ReactDOM.render(
-
-    <Provider store={myAppStore}>
-      <Router>
-        <App />
-      </Router>
-    </Provider>,    
+  <Provider store={myAppStore}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>,
 
   document.getElementById('root')
 );
