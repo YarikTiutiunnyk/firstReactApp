@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card test Serch bar initial renders properly 1`] = `
+"<div className=\\"SerchContainer\\">
+  <Input disabled={false} fluid={true} size=\\"large\\" onChange={[Function: onChange]} value=\\"\\" action={{...}} placeholder=\\"Search...\\" type=\\"text\\" />
+  <Header as=\\"h4\\" content=\\"We found 0 item\\" subheader=\\"\\" />
+</div>"
+`;

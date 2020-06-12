@@ -1,4 +1,4 @@
-import reducer from './serch';
+import reducer from '../serch';
 
 const initialState = {
   serchStringFilms: 'Text',

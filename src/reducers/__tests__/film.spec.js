@@ -1,4 +1,4 @@
-import reducer from './film';
+import reducer from '../film';
 
 const initialState = {
   films: {

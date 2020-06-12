@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardList test With empty mas renders properly 1`] = `ShallowWrapper {}`;
+
+exports[`CardList test With mas that have 2 films renders properly 1`] = `ShallowWrapper {}`;

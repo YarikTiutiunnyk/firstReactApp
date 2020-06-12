@@ -20,7 +20,7 @@ const CardList = ({ films, currentURL }) => (
             />
           );
         })
-      : ''}
+      : ' '}
   </Card.Group>
 );
 CardList.propTypes = {

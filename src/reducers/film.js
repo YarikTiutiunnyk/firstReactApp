@@ -1,4 +1,4 @@
-const initialState = {
+export const initialState = {
   films: {
     found: '0',
     count: 0,

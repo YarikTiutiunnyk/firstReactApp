@@ -1,4 +1,4 @@
-import reducer from './menu';
+import reducer from '../menu';
 
 const initialState = {
   activePage: 'collections'
