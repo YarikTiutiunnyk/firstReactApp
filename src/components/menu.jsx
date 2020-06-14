@@ -6,20 +6,11 @@ import { Menu } from 'semantic-ui-react';
 
 import { setActivePage } from '../actions/menu';
 
-class MenuExampleBasic extends Component {
-  constructor(props) {
-    super(props);
+export class MenuExampleBasic extends Component {
+  handleItemClick = (name11) => {
+    this.props.setActivePage(name11);
+  };
 
-    this.handleItemClick = this.handleItemClick.bind(this);
-  }
-
-  handleItemClick(e, { name }) {
-    this.props.setActivePage(name);
-  }
-
-  /*handleItemClick = (e, { name }) => {
-    this.props.setActivePage(name);
-  }*/
   render() {
     const activeItem = this.props.activePage;
 
@@ -30,7 +21,7 @@ class MenuExampleBasic extends Component {
           to="/firstReactApp/"
           name="collections"
           active={activeItem === 'collections'}
-          onClick={this.handleItemClick}
+          onClick={this.handleItemClick.bind(this, 'collections')}
         >
           My collectoons
         </Menu.Item>
@@ -40,7 +31,7 @@ class MenuExampleBasic extends Component {
           to="/firstReactApp/films"
           name="films"
           active={activeItem === 'films'}
-          onClick={this.handleItemClick}
+          onClick={this.handleItemClick.bind(this, 'films')}
         >
           Serch films
         </Menu.Item>
@@ -50,7 +41,7 @@ class MenuExampleBasic extends Component {
           to="/firstReactApp/series"
           name="series"
           active={activeItem === 'series'}
-          onClick={this.handleItemClick}
+          onClick={this.handleItemClick.bind(this, 'series')}
         >
           Serch series
         </Menu.Item>

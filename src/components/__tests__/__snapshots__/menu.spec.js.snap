@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu test Menu initial Collections actibve renders properly 1`] = `
+<Menu
+  stackable={true}
+  widths={3}
+>
+  <MenuItem
+    active={true}
+    as={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "Link",
+        "propTypes": Object {
+          "innerRef": [Function],
+          "onClick": [Function],
+          "replace": [Function],
+          "target": [Function],
+          "to": [Function],
+        },
+        "render": [Function],
+      }
+    }
+    name="collections"
+    onClick={[Function]}
+    to="/firstReactApp/"
+  >
+    My collectoons
+  </MenuItem>
+  <MenuItem
+    active={false}
+    as={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "Link",
+        "propTypes": Object {
+          "innerRef": [Function],
+          "onClick": [Function],
+          "replace": [Function],
+          "target": [Function],
+          "to": [Function],
+        },
+        "render": [Function],
+      }
+    }
+    name="films"
+    onClick={[Function]}
+    to="/firstReactApp/films"
+  >
+    Serch films
+  </MenuItem>
+  <MenuItem
+    active={false}
+    as={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "Link",
+        "propTypes": Object {
+          "innerRef": [Function],
+          "onClick": [Function],
+          "replace": [Function],
+          "target": [Function],
+          "to": [Function],
+        },
+        "render": [Function],
+      }
+    }
+    name="series"
+    onClick={[Function]}
+    to="/firstReactApp/series"
+  >
+    Serch series
+  </MenuItem>
+</Menu>
+`;

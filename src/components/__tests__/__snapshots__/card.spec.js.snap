@@ -1,3 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card test All fields are correct renders properly 1`] = `ShallowWrapper {}`;
+exports[`Card test All fields are correct renders properly 1`] = `
+<Card>
+  <Image
+    as="img"
+    src="URL"
+    ui={false}
+    wrapped={true}
+  />
+  <CardContent>
+    <CardHeader>
+      <Link
+        to="//555"
+      >
+        Test title
+      </Link>
+    </CardHeader>
+    <CardMeta>
+      <span
+        className="date"
+      >
+        Published in 2000
+      </span>
+    </CardMeta>
+    <CardDescription />
+  </CardContent>
+  <CardContent
+    extra={true}
+  >
+    <Icon
+      as="i"
+      name="film"
+    />
+     film
+  </CardContent>
+</Card>
+`;

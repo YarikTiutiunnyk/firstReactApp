@@ -1,5 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CardList test With empty mas renders properly 1`] = `ShallowWrapper {}`;
+exports[`CardList test With empty mas renders properly 1`] = `
+<CardGroup
+  itemsPerRow={4}
+  stackable={true}
+>
+   
+</CardGroup>
+`;
 
-exports[`CardList test With mas that have 2 films renders properly 1`] = `ShallowWrapper {}`;
+exports[`CardList test With mas that have 2 films renders properly 1`] = `
+<CardGroup
+  itemsPerRow={4}
+  stackable={true}
+>
+  <FilmCard
+    Poster="https://m.media-amazon.com/images/M/MV5BYzFlMTJjYzUtMWFjYy00NjkyLTg1Y2EtYmZkMjdlOGQ1ZGYwL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
+    Title="Name 1"
+    Type="movie"
+    Year="2001"
+    currentURL="/test"
+    imdbID="tt0259711"
+    key="0-tt0259711"
+  />
+  <FilmCard
+    Poster="https://m.media-amazon.com/images/M/MV5BMTYwMzMwMzgxNl5BMl5BanBnXkFtZTgwMTA0MTUzMDI@._V1_SX300.jpg"
+    Title="Name 2"
+    Type="movie"
+    Year="2016"
+    currentURL="/test"
+    imdbID="tt4550098"
+    key="1-tt4550098"
+  />
+</CardGroup>
+`;

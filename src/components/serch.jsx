@@ -14,10 +14,6 @@ class InputExampleActionIconButton extends React.Component {
     this.updateInput = this.updateInput.bind(this);
   }
 
-  /*updateInput = input => {
-      this.setState({ input });
-    };*/
-
   updateInput(input) {
     this.setState({ input });
   }

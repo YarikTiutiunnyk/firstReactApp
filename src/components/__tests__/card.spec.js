@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Card from '../card';
+//import toJson from 'enzyme-to-json';
 
 describe('Card test', () => {
   const props = {
