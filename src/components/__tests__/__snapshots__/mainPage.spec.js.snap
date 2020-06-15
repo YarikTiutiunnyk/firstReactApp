@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainPage test MainPage initial Collections actibve renders properly 1`] = `
+<Container>
+  <Image
+    as="img"
+    centered={true}
+    src="logoImg.png"
+    ui={true}
+  />
+  <Connect(MenuExampleBasic) />
+  <Switch>
+    <Route
+      exact={true}
+      path="/firstReactApp/films"
+    >
+      <InputExampleActionIconButton
+        itemFound="1"
+        setItems={[MockFunction]}
+        setItemsError={[MockFunction]}
+        setSerchString={[MockFunction]}
+        textError="Error film"
+        type="movie"
+      />
+      <SerchFilmPage
+        filmObj={
+          Object {
+            "count": 1,
+            "found": "1",
+            "mas": Array [
+              Object {
+                "Poster": "URL",
+                "Title": "Name 1",
+                "Type": "movie",
+                "Year": "2001",
+                "imdbID": "tt0259711",
+              },
+            ],
+            "textError": "Error film",
+          }
+        }
+        serchStringFilms="filmName"
+        setFilms={[MockFunction]}
+        setFilmsError={[MockFunction]}
+      />
+    </Route>
+    <Route
+      exact={true}
+      path="/firstReactApp/series"
+    >
+      <InputExampleActionIconButton
+        itemFound="1"
+        setItems={[MockFunction]}
+        setItemsError={[MockFunction]}
+        setSerchString={[MockFunction]}
+        textError="Error series"
+        type="series"
+      />
+      <SerchSeriesPage
+        filmObj={
+          Object {
+            "count": 1,
+            "found": "1",
+            "mas": Array [
+              Object {
+                "Poster": "URL",
+                "Title": "Name 2",
+                "Type": "series",
+                "Year": "2001",
+                "imdbID": "tt0259711",
+              },
+            ],
+            "textError": "Error series",
+          }
+        }
+        serchStringFilms="seriesName"
+        setFilms={[MockFunction]}
+        setFilmsError={[MockFunction]}
+      />
+    </Route>
+    <Route
+      exact={true}
+      path="/firstReactApp/"
+    >
+      <CardList
+        currentURL="/firstReactApp/collection"
+        films={
+          Array [
+            Object {
+              "Poster": "URL",
+              "Title": "Name 3",
+              "Type": "movie",
+              "Year": "2001",
+              "imdbID": "tt0259711",
+            },
+          ]
+        }
+      />
+    </Route>
+  </Switch>
+</Container>
+`;

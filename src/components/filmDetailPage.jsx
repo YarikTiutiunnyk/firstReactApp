@@ -21,7 +21,7 @@ export default function FilmDetail() {
   return <FilmDetailPage match={match}></FilmDetailPage>;
 }
 
-class FilmDetailPage extends React.Component {
+export class FilmDetailPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

@@ -1,0 +1,214 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilmDetailPage FilmDetailPage initial Collections actibve renders properly 1`] = `
+<div>
+  <Segment
+    inverted={true}
+    style={
+      Object {
+        "minHeight": 500,
+        "padding": "8em 0em",
+      }
+    }
+    textAlign="center"
+    vertical={true}
+  >
+    <Grid
+      container={true}
+      stackable={true}
+      verticalAlign="middle"
+    >
+      <GridColumn
+        floated="left"
+        width={6}
+      >
+        <Image
+          as="img"
+          centered={true}
+          rounded={true}
+          size="medium"
+          src="N/A"
+          ui={true}
+        />
+        <Button
+          as={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "displayName": "Link",
+              "propTypes": Object {
+                "innerRef": [Function],
+                "onClick": [Function],
+                "replace": [Function],
+                "target": [Function],
+                "to": [Function],
+              },
+              "render": [Function],
+            }
+          }
+          primary={true}
+          size="huge"
+          style={
+            Object {
+              "marginTop": "1.5em",
+            }
+          }
+          to="/firstReactApp/films"
+        >
+          <Icon
+            as="i"
+            name="left arrow"
+          />
+          Go back
+        </Button>
+      </GridColumn>
+      <GridColumn
+        width={8}
+      >
+        <Header
+          as="h1"
+          inverted={true}
+          style={
+            Object {
+              "fontSize": "3em",
+              "fontWeight": "normal",
+              "marginBottom": 0,
+            }
+          }
+        />
+        <Header
+          as="h2"
+          inverted={true}
+          style={
+            Object {
+              "fontSize": "1.7em",
+              "fontWeight": "normal",
+              "marginTop": "1.5em",
+            }
+          }
+        >
+          Describe isn't available
+        </Header>
+      </GridColumn>
+    </Grid>
+  </Segment>
+  <Segment
+    style={
+      Object {
+        "minHeight": 500,
+        "padding": "2em 0em",
+      }
+    }
+    vertical={true}
+  >
+    <Container>
+      <Grid
+        stackable={true}
+        verticalAlign="middle"
+      >
+        <GridRow>
+          <GridColumn
+            width={6}
+          >
+            <Header
+              as="h3"
+              style={
+                Object {
+                  "fontSize": "2em",
+                }
+              }
+            >
+              Additional information
+            </Header>
+            <List
+              size="huge"
+            >
+              <ListItem>
+                <ListIcon
+                  name="calendar alternate"
+                />
+                <ListContent>
+                  Year is unknown
+                </ListContent>
+              </ListItem>
+              <ListItem>
+                <ListIcon
+                  name="time"
+                />
+                <ListContent>
+                  Runtime is unknown
+                </ListContent>
+              </ListItem>
+              <ListItem>
+                <ListIcon
+                  name="video"
+                />
+                <ListContent>
+                  Genres is unknown
+                   
+                </ListContent>
+              </ListItem>
+              <ListItem>
+                <ListIcon
+                  name="address book"
+                />
+                <ListContent>
+                  Writer is unknown
+                   
+                </ListContent>
+              </ListItem>
+              <ListItem>
+                <ListIcon
+                  name="hand paper"
+                />
+                <ListContent>
+                  Director is unknown
+                   
+                </ListContent>
+              </ListItem>
+              <ListItem>
+                <ListIcon
+                  name="users"
+                />
+                <ListContent>
+                  Actors is unknown
+                   
+                </ListContent>
+              </ListItem>
+              <ListItem>
+                <ListIcon
+                  name="star"
+                />
+                <ListContent>
+                  Rating is unknown
+                   
+                </ListContent>
+              </ListItem>
+            </List>
+          </GridColumn>
+          <GridColumn
+            floated="right"
+            width={8}
+          >
+            <Embed
+              autoplay={true}
+              id=""
+              iframe={
+                Object {
+                  "allowFullScreen": true,
+                }
+              }
+              placeholder=""
+              source="youtube"
+              style={
+                Object {
+                  "width": "auto",
+                }
+              }
+            />
+          </GridColumn>
+        </GridRow>
+      </Grid>
+    </Container>
+  </Segment>
+</div>
+`;

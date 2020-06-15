@@ -22,7 +22,7 @@ import CardList from './cardList';
 import Menu from './menu';
 import SerchBlock from './serch';
 
-function mainPage(props) {
+export function mainPage(props) {
   //let match = useRouteMatch();
 
   return (
@@ -128,7 +128,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 export default connect(mapStateToProps, mapDispatchToProps)(mainPage);
 
-function SerchFilmPage(props) {
+export function SerchFilmPage(props) {
   let match = useRouteMatch();
 
   function handleClick(e) {
@@ -171,7 +171,7 @@ SerchFilmPage.propTypes = {
   setFilmsError: PropTypes.func.isRequired
 };
 
-function SerchSeriesPage(props) {
+export function SerchSeriesPage(props) {
   let match = useRouteMatch();
 
   function handleClick(e) {
