@@ -3,13 +3,15 @@ export const initialState = {
     found: '0',
     count: 0,
     mas: [],
-    textError: ''
+    textError: '',
+    isLoading: false
   },
   series: {
     found: '0',
     count: 0,
     mas: [],
-    textError: ''
+    textError: '',
+    isLoading: false
   },
   collection: {
     mas: [
@@ -413,6 +415,22 @@ export default (state = initialState, action) => {
           count: 0,
           mas: [],
           textError: action.payload
+        }
+      };
+    case 'SET_FILMS_LOADING':
+      return {
+        ...state,
+        films: {
+          ...state.films,
+          isLoading: action.payload
+        }
+      };
+    case 'SET_SERIES_LOADING':
+      return {
+        ...state,
+        series: {
+          ...state.series,
+          isLoading: action.payload
         }
       };
     default:

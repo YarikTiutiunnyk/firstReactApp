@@ -1,7 +1,14 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-import { Container, Image, Button, Segment } from 'semantic-ui-react';
+import {
+  Container,
+  Image,
+  Button,
+  Segment,
+  Dimmer,
+  Loader
+} from 'semantic-ui-react';
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import logoSite from '../img/logoImg.png';
@@ -146,14 +153,20 @@ export function SerchFilmPage(props) {
 
   return (
     <div>
-      <CardList films={props.filmObj.mas} currentURL={`${match.url}`} />
+      <Segment basic>
+        <Dimmer active={props.filmObj.isLoading} inverted>
+          <Loader inverted>Loading</Loader>
+        </Dimmer>
+        <CardList films={props.filmObj.mas} currentURL={`${match.url}`} />
+      </Segment>
+
       <Segment basic textAlign="center">
         <Button
           onClick={handleClick}
           disabled={props.filmObj.count >= props.filmObj.found}
           primary
           size="huge"
-          style={{ marginTop: '1.5em', minWidth: '10em', marginBottom: '50px' }}
+          style={{ marginTop: '0.5em', minWidth: '10em', marginBottom: '50px' }}
         >
           {' '}
           More{' '}
@@ -166,7 +179,8 @@ SerchFilmPage.propTypes = {
   filmObj: PropTypes.shape({
     mas: PropTypes.array,
     count: PropTypes.number,
-    found: PropTypes.string
+    found: PropTypes.string,
+    isLoading: PropTypes.bool
   }),
   serchStringFilms: PropTypes.string.isRequired,
   setFilms: PropTypes.func.isRequired,
@@ -190,14 +204,20 @@ export function SerchSeriesPage(props) {
 
   return (
     <div>
-      <CardList films={props.filmObj.mas} currentURL={`${match.url}`} />
+      <Segment basic>
+        <Dimmer active={props.filmObj.isLoading} inverted>
+          <Loader inverted>Loading</Loader>
+        </Dimmer>
+        <CardList films={props.filmObj.mas} currentURL={`${match.url}`} />
+      </Segment>
+
       <Segment basic textAlign="center">
         <Button
           onClick={handleClick}
           disabled={props.filmObj.count >= props.filmObj.found}
           primary
           size="huge"
-          style={{ marginTop: '1.5em', minWidth: '10em', marginBottom: '50px' }}
+          style={{ marginTop: '0.5em', minWidth: '10em', marginBottom: '50px' }}
         >
           {' '}
           More{' '}
@@ -210,7 +230,8 @@ SerchSeriesPage.propTypes = {
   filmObj: PropTypes.shape({
     mas: PropTypes.array,
     count: PropTypes.number,
-    found: PropTypes.string
+    found: PropTypes.string,
+    isLoading: PropTypes.bool
   }),
   serchStringFilms: PropTypes.string.isRequired,
   setFilms: PropTypes.func.isRequired,

@@ -1,17 +1,20 @@
 import reducer from '../film';
+import { setFilmsLoading, setSeriesLoading } from '../../actions/film';
 
 const initialState = {
   films: {
     found: '0',
     count: 0,
     mas: [],
-    textError: ''
+    textError: '',
+    isLoading: false
   },
   series: {
     found: '0',
     count: 0,
     mas: [],
-    textError: ''
+    textError: '',
+    isLoading: false
   },
   collection: {
     mas: []
@@ -40,7 +43,8 @@ describe('film reducer test', () => {
         found: '0',
         count: 3,
         mas: [1, 2, 3],
-        textError: ''
+        textError: '',
+        isLoading: false
       }
     };
     const action = {
@@ -55,7 +59,8 @@ describe('film reducer test', () => {
         found: '0',
         count: 6,
         mas: [1, 2, 3, 4, 5, 6],
-        textError: ''
+        textError: '',
+        isLoading: false
       }
     });
   });
@@ -74,7 +79,8 @@ describe('film reducer test', () => {
         found: '3',
         count: 3,
         mas: [1, 2, 3],
-        textError: ''
+        textError: '',
+        isLoading: false
       }
     });
   });
@@ -90,7 +96,8 @@ describe('film reducer test', () => {
         found: '0',
         count: 0,
         mas: [],
-        textError: 'Error text'
+        textError: 'Error text',
+        isLoading: false
       }
     });
   });
@@ -102,7 +109,8 @@ describe('film reducer test', () => {
         found: '0',
         count: 3,
         mas: [1, 2, 3],
-        textError: ''
+        textError: '',
+        isLoading: false
       }
     };
     const action = {
@@ -117,7 +125,8 @@ describe('film reducer test', () => {
         found: '0',
         count: 6,
         mas: [1, 2, 3, 4, 5, 6],
-        textError: ''
+        textError: '',
+        isLoading: false
       }
     });
   });
@@ -136,7 +145,8 @@ describe('film reducer test', () => {
         found: '3',
         count: 3,
         mas: [1, 2, 3],
-        textError: ''
+        textError: '',
+        isLoading: false
       }
     });
   });
@@ -152,7 +162,28 @@ describe('film reducer test', () => {
         found: '0',
         count: 0,
         mas: [],
-        textError: 'Error text'
+        textError: 'Error text',
+        isLoading: false
+      }
+    });
+  });
+  //-----------------------------------------------------
+  it('SET_FILMS_LOADING', () => {
+    expect(reducer(initialState, setFilmsLoading(true))).toEqual({
+      ...initialState,
+      films: {
+        ...initialState.films,
+        isLoading: true
+      }
+    });
+  });
+  //-----------------------------------------------------
+  it('SET_SERIES_LOADING', () => {
+    expect(reducer(initialState, setSeriesLoading(true))).toEqual({
+      ...initialState,
+      series: {
+        ...initialState.series,
+        isLoading: true
       }
     });
   });
