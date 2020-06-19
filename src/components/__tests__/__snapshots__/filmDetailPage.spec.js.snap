@@ -52,7 +52,7 @@ exports[`FilmDetailPage FilmDetailPage initial Collections actibve renders prope
               "marginTop": "1.5em",
             }
           }
-          to="/firstReactApp/films"
+          to="/firstReactApp/"
         >
           <Icon
             as="i"
@@ -191,13 +191,13 @@ exports[`FilmDetailPage FilmDetailPage initial Collections actibve renders prope
           >
             <Embed
               autoplay={true}
-              id=""
+              id="123456"
               iframe={
                 Object {
                   "allowFullScreen": true,
                 }
               }
-              placeholder=""
+              placeholder="URL"
               source="youtube"
               style={
                 Object {

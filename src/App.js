@@ -3,7 +3,7 @@ import './App.css';
 
 import { Switch, Route } from 'react-router-dom';
 
-import FilmDetail from './components/filmDetailPage';
+import FilmDetail from './components/filmDetailPage/filmDetailPageContainer';
 import MainPage from './components/mainPage';
 
 class App extends React.Component {
