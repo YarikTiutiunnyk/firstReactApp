@@ -33,7 +33,7 @@ export class MenuExampleBasic extends Component {
           active={activeItem === 'films'}
           onClick={this.handleItemClick.bind(this, 'films')}
         >
-          Serch films
+          Search films
         </Menu.Item>
 
         <Menu.Item
@@ -43,7 +43,7 @@ export class MenuExampleBasic extends Component {
           active={activeItem === 'series'}
           onClick={this.handleItemClick.bind(this, 'series')}
         >
-          Serch series
+          Search series
         </Menu.Item>
       </Menu>
     );

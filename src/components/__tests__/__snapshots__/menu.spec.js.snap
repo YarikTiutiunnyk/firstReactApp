@@ -47,7 +47,7 @@ exports[`Menu test Menu initial Collections actibve renders properly 1`] = `
     onClick={[Function]}
     to="/firstReactApp/films"
   >
-    Serch films
+    Search films
   </MenuItem>
   <MenuItem
     active={false}
@@ -69,7 +69,7 @@ exports[`Menu test Menu initial Collections actibve renders properly 1`] = `
     onClick={[Function]}
     to="/firstReactApp/series"
   >
-    Serch series
+    Search series
   </MenuItem>
 </Menu>
 `;
