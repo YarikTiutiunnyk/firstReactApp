@@ -1,18 +1,18 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import SerchBar from '../serch';
+import { InputExampleActionIconButton as SerchBar } from '../serch';
 
 describe('SerchBar test', () => {
-  const mocksetSerchString = jest.fn();
   const mocksetItemsError = jest.fn();
   const mocksetItems = jest.fn();
+  const mockitemsFetchData = jest.fn();
   const props = {
     itemFound: '0',
     textError: '',
     type: 'movie',
-    setSerchString: mocksetSerchString,
     setItemsError: mocksetItemsError,
-    setItems: mocksetItems
+    setItems: mocksetItems,
+    itemsFetchData: mockitemsFetchData
   };
   //const initialState = { input: 'hello' };
 
@@ -47,7 +47,7 @@ describe('SerchBar test', () => {
       const wrapper = mount(<SerchBar {...props} />);
       //console.log(wrapper.find('Button').debug());
       wrapper.find('Button').simulate('click');
-      expect(mocksetSerchString).toHaveBeenCalledTimes(1);
+      expect(mockitemsFetchData).toHaveBeenCalledTimes(1);
       wrapper.unmount();
     });
   });

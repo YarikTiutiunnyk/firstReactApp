@@ -13,10 +13,10 @@ import {
   setFilmsError,
   setSeries,
   addSeries,
-  setSeriesError
+  setSeriesError,
+  itemsFetchData
 } from '../actions/film';
 import { setSerchFilmsString, setSerchSeriesString } from '../actions/serch';
-import { serchOMDBFilms } from './serch';
 
 import CardList from './cardList';
 import Menu from './menu';
@@ -36,7 +36,6 @@ export function mainPage(props) {
             textError={props.filmObj.textError}
             setItems={props.setFilms}
             setItemsError={props.setFilmsError}
-            setSerchString={props.setSerchFilmsString}
             type="movie"
           />
           <SerchFilmPage
@@ -44,6 +43,7 @@ export function mainPage(props) {
             setFilms={props.addFilms}
             setFilmsError={props.setFilmsError}
             serchStringFilms={props.serchStringFilms}
+            fetchData={props.fetchData}
           />
         </Route>
         <Route exact path="/firstReactApp/series">
@@ -52,7 +52,6 @@ export function mainPage(props) {
             textError={props.seriesObj.textError}
             setItems={props.setSeries}
             setItemsError={props.setSeriesError}
-            setSerchString={props.setSerchSeriesString}
             type="series"
           />
           <SerchSeriesPage
@@ -60,6 +59,7 @@ export function mainPage(props) {
             setFilms={props.addSeries}
             setFilmsError={props.setSeriesError}
             serchStringFilms={props.serchStringSeries}
+            fetchData={props.fetchData}
           />
         </Route>
         <Route exact path="/firstReactApp/">
@@ -123,7 +123,9 @@ const mapDispatchToProps = (dispatch) => ({
   setSeriesError: (strError) => dispatch(setSeriesError(strError)),
 
   setSerchFilmsString: (str) => dispatch(setSerchFilmsString(str)),
-  setSerchSeriesString: (str) => dispatch(setSerchSeriesString(str))
+  setSerchSeriesString: (str) => dispatch(setSerchSeriesString(str)),
+  fetchData: (name, setItems, setItemsError, page, type) =>
+    dispatch(itemsFetchData(name, setItems, setItemsError, page, type))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(mainPage);
@@ -134,7 +136,7 @@ export function SerchFilmPage(props) {
   function handleClick(e) {
     e.preventDefault();
     //console.log('По ссылке кликнули.');
-    serchOMDBFilms(
+    props.fetchData(
       props.serchStringFilms,
       props.setFilms,
       props.setFilmsError,
@@ -177,7 +179,7 @@ export function SerchSeriesPage(props) {
   function handleClick(e) {
     e.preventDefault();
     //console.log('По ссылке кликнули.');
-    serchOMDBFilms(
+    props.fetchData(
       props.serchStringFilms,
       props.setFilms,
       props.setFilmsError,

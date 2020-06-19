@@ -14,11 +14,10 @@ exports[`MainPage test MainPage initial Collections actibve renders properly 1`]
       exact={true}
       path="/firstReactApp/films"
     >
-      <InputExampleActionIconButton
+      <Connect(InputExampleActionIconButton)
         itemFound="1"
         setItems={[MockFunction]}
         setItemsError={[MockFunction]}
-        setSerchString={[MockFunction]}
         textError="Error film"
         type="movie"
       />
@@ -48,11 +47,10 @@ exports[`MainPage test MainPage initial Collections actibve renders properly 1`]
       exact={true}
       path="/firstReactApp/series"
     >
-      <InputExampleActionIconButton
+      <Connect(InputExampleActionIconButton)
         itemFound="1"
         setItems={[MockFunction]}
         setItemsError={[MockFunction]}
-        setSerchString={[MockFunction]}
         textError="Error series"
         type="series"
       />
