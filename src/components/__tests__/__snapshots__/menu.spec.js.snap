@@ -25,7 +25,7 @@ exports[`Menu test Menu initial Collections actibve renders properly 1`] = `
     onClick={[Function]}
     to="/firstReactApp/"
   >
-    My collectoons
+    My collections
   </MenuItem>
   <MenuItem
     active={false}

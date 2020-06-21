@@ -23,7 +23,7 @@ export class MenuExampleBasic extends Component {
           active={activeItem === 'collections'}
           onClick={this.handleItemClick.bind(this, 'collections')}
         >
-          My collectoons
+          My collections
         </Menu.Item>
 
         <Menu.Item
