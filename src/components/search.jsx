@@ -7,7 +7,7 @@ import { itemsFetchData } from '../actions/film';
 
 //import { setFilms, setFilmsError } from '../actions/film';
 
-export class InputExampleActionIconButton extends React.Component {
+export class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = { input: '' };
@@ -59,7 +59,7 @@ export class InputExampleActionIconButton extends React.Component {
     );
   }
 }
-InputExampleActionIconButton.propTypes = {
+SearchBar.propTypes = {
   setItems: PropTypes.func.isRequired,
   setItemsError: PropTypes.func.isRequired,
   type: PropTypes.string,
@@ -67,5 +67,5 @@ InputExampleActionIconButton.propTypes = {
   textError: PropTypes.string.isRequired
 };
 
-export default connect(null, { itemsFetchData })(InputExampleActionIconButton);
+export default connect(null, { itemsFetchData })(SearchBar);
 //export default InputExampleActionIconButton;

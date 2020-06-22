@@ -27,7 +27,7 @@ import { setSerchFilmsString, setSerchSeriesString } from '../actions/serch';
 
 import CardList from './cardList';
 import Menu from './menu';
-import SerchBlock from './serch';
+import SearchBar from './search';
 
 export function mainPage(props) {
   //let match = useRouteMatch();
@@ -38,7 +38,7 @@ export function mainPage(props) {
       <Menu />
       <Switch>
         <Route exact path="/firstReactApp/films">
-          <SerchBlock
+          <SearchBar
             itemFound={props.filmObj.found}
             textError={props.filmObj.textError}
             setItems={props.setFilms}
@@ -54,7 +54,7 @@ export function mainPage(props) {
           />
         </Route>
         <Route exact path="/firstReactApp/series">
-          <SerchBlock
+          <SearchBar
             itemFound={props.seriesObj.found}
             textError={props.seriesObj.textError}
             setItems={props.setSeries}
