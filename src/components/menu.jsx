@@ -7,8 +7,8 @@ import { Menu } from 'semantic-ui-react';
 import { setActivePage } from '../actions/menu';
 
 export class MenuExampleBasic extends Component {
-  handleItemClick = (name11) => {
-    this.props.setActivePage(name11);
+  handleItemClick = (name) => {
+    this.props.setActivePage(name);
   };
 
   render() {

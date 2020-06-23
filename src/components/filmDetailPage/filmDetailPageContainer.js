@@ -86,10 +86,24 @@ export class FilmDetailPage extends React.Component {
             json.Type
           }&type=video&key=AIzaSyDbvAZjWhs15-sw8XRVAzguPtIYYwqg7XE`;
           fetch(urlSerchVideo)
-            .then((result) => {
-              //console.log(result);
-              return result.json();
+            .then((res) => {
+              if (res.status >= 200 && res.status < 300) {
+                return res;
+              } else {
+                let error = new Error(res.statusText);
+                error.response = res;
+                throw error;
+              }
             })
+            /*.then((res) => {
+              if (res.headers['content-type'] !== 'application/json') {
+                let error = new Error('Некорректный ответ от сервера');
+                error.response = res;
+                throw error;
+              }
+              return res;
+            })*/
+            .then((res) => res.json())
             .then((json) => {
               //console.log(json);
               this.setState({
@@ -99,7 +113,11 @@ export class FilmDetailPage extends React.Component {
                 }
               });
             })
-            .catch((error) => console.log('*****Fatch failed***** :', error));
+            .catch((e) => {
+              console.log('Youtube API Error: ' + e.message);
+              console.log(e.response);
+            });
+          //.catch((error) => console.log('*****Fatch failed***** :', error));
         } else {
           this.setState({
             Response: json.Response
