@@ -6,5 +6,6 @@ import rootReducer from './reducers';
 //Створюємо Store і додаємо до нього посередників
 export default () => {
   const store = createStore(rootReducer, applyMiddleware(thunk, logger));
+  //const store = createStore(rootReducer, applyMiddleware(thunk)); //for deploy
   return store;
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { InputExampleActionIconButton as SerchBar } from '../serch';
+import { SearchBar } from '../search';
 
 describe('SerchBar test', () => {
   const mocksetItemsError = jest.fn();
@@ -17,7 +17,7 @@ describe('SerchBar test', () => {
   //const initialState = { input: 'hello' };
 
   describe('SerchBar initial', () => {
-    const wrapper = shallow(<SerchBar {...props} />);
+    const wrapper = shallow(<SearchBar {...props} />);
 
     it('renders properly', () => {
       expect(wrapper).toMatchSnapshot();
@@ -31,7 +31,7 @@ describe('SerchBar test', () => {
   });
 
   describe('Samulate events', () => {
-    const wrapper = shallow(<SerchBar {...props} />);
+    const wrapper = shallow(<SearchBar {...props} />);
     const newText = 'new text';
 
     it('change on input form', () => {
@@ -44,7 +44,7 @@ describe('SerchBar test', () => {
     });
 
     it('click on the button', () => {
-      const wrapper = mount(<SerchBar {...props} />);
+      const wrapper = mount(<SearchBar {...props} />);
       //console.log(wrapper.find('Button').debug());
       wrapper.find('Button').simulate('click');
       expect(mockitemsFetchData).toHaveBeenCalledTimes(1);
